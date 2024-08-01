@@ -5,5 +5,6 @@ public class Main {
 
         HRManagement.mainMenu();
         System.out.println("Feature Y modification");
+        System.out.println("Feature X modification");
     }
 }
