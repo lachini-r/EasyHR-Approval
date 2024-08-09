@@ -9,8 +9,5 @@
         <module name="EasyHR-Approval" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="EasyHR-Approval" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
