@@ -13,6 +13,10 @@ public class HRManagement {
     }
 
     public void addEmployee(String name, String position) {
+        if (name == null || name.trim().isEmpty()) {
+            System.out.println("Employee name is required.");
+            return;
+        }
         employees.add(new Employee(name, position));
         System.out.println("Employee added successfully.");
     }
@@ -25,7 +29,19 @@ public class HRManagement {
                 return;
             }
         }
-        System.out.println("Employee with ID " + id + " not found.");
+        Employee employee = findEmployeeById(id);
+        if (employee == null) {
+            System.out.println("Employee with ID " + id + " not found.");
+            return;
+        }
+    }
+    private Employee findEmployeeById(int id) {
+        for (Employee employee : employees) {
+            if (employee.getId() == id) {
+                return employee;
+            }
+        }
+        return null;
     }
 
     public void viewEmployees() {

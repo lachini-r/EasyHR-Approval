@@ -1,6 +1,7 @@
 package test;
 
 import HR.HRManagement;
+import HR.Employee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -47,7 +48,9 @@ class MainTest {
     public void testApproveNonExistentEmployeeById() {
         System.out.println("Testing:testApproveNonExistentEmployeeById");
         hrManagement.approveEmployeeById(100);
-        assertTrue(hrManagement.getEmployees().size() > 0, "No such employee");
+        // Verify no employees were mistakenly approved
+        boolean noApprovedEmployees = hrManagement.getEmployees().stream().noneMatch(Employee::isApproved);
+        assertTrue(noApprovedEmployees, "No employees should be approved when attempting to approve a non-existent employee");
         System.out.println("______________________");
     }
 

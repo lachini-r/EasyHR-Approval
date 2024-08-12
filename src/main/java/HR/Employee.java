@@ -36,6 +36,7 @@ public class Employee {
         this.isApproved = true;
     }
 
+
     @Override
     public String toString() {
         return "Employee{id=" + id + ", name='" + name + "', position='" + position + "', isApproved=" + isApproved + "}";
