@@ -37,8 +37,9 @@ pipeline {
             echo 'Cleaning up...'
             script {
                     sh 'docker stop easyhr_approval_container || true'
-                    //if you want to remove container uncomment the following line
-                    //sh 'docker rm easyhr_approval_container || true'
+
+                    sh 'docker rm easyhr_approval_container || true'
+                    sh 'docker rmi $DOCKER_IMAGE:$DOCKER_TAG || true'
             }
         }
     }
