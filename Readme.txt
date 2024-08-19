@@ -1,4 +1,4 @@
-#EasyHR-Approval Project
+#EasyHR-Approval Project with Jenkins and Docker
 
 ##Prerequisites
 -Java JDK 21 or higher installed.
